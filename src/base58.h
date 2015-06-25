@@ -265,9 +265,9 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 63,  // Peershare addresses begin with 'S'
+        PUBKEY_ADDRESS = 36,  // Peershare addresses begin with 'F'
         SCRIPT_ADDRESS = 125, // Peershare script addresses begin with 's'
-        PUBKEY_ADDRESS_TEST = 32,
+        PUBKEY_ADDRESS_TEST = 95,
         SCRIPT_ADDRESS_TEST = 212,
     };
 

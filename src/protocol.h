@@ -15,10 +15,10 @@
 #include <string>
 #include "uint256.h"
 
-#define PEERSHARES_PORT  9921
-#define RPC_PORT     9922
-#define TESTNET_PORT 47891
-#define TESTNET_RPC_PORT 47892
+#define PEERSHARES_PORT  9941
+#define RPC_PORT     9942
+#define TESTNET_PORT 47791
+#define TESTNET_RPC_PORT 47792
 
 #define PEERCOIN_RPC_PORT         9902
 #define PEERCOIN_TESTNET_RPC_PORT 9904

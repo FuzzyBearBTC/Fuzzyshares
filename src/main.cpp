@@ -21,8 +21,8 @@ using namespace boost;
 //
 // Global state
 //
-static const uint256 hashGenesisBlockOfficial("0x000000d78e35e381ca738ceb855b9faf528f0970d994ce4eb4560b56cbe2f6c4");
-static const uint256 hashGenesisBlockTestNet ("0x0000013585f2f416fae10cb9dfe7b93f4628802c27fab1ce54e6a47ead252568");
+static const uint256 hashGenesisBlockOfficial("0x000005d1653de90ed72acb9a0038aada4d0258af90bebb064142608004af69cc");
+static const uint256 hashGenesisBlockTestNet ("0x00000e652a40292fd092cacc23ab4b5b171ce1f79f6b5b7dae44541728bfe4d4");
 
 CCriticalSection cs_setpwalletRegistered;
 set<CWallet*> setpwalletRegistered;
@@ -2250,23 +2250,24 @@ bool LoadBlockIndex(bool fAllowNew)
         if (!fAllowNew)
             return false;
 
-        // Genesis Block:
-        // CBlock(hash=000000000019d6, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=4a5e1e, nTime=1231006505, nBits=1d00ffff, nNonce=2083236893, vtx=1)
-        //   CTransaction(hash=4a5e1e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        //     CTxIn(COutPoint(000000, -1), coinbase 04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73)
-        //     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
-        //   vMerkleTree: 4a5e1e
-
-        // Genesis block
-        const char* pszTimestamp = "intentionally broken genesis block - build is for public testnet only!";
-        unsigned int nTimeGenesis=1231231231;
-        unsigned int nNonceGenesis=123123;
+        // Genesis Block Found:
+	//genesis hash=000005d1653de90ed72acb9a0038aada4d0258af90bebb064142608004af69cc
+	//merkle root=cad21153f38f96e94271f41590ecf5a052edd851dd7869fa8b375958ea1050cc
+	//CBlock(hash=000005d1653de90ed72a, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=cad21153f3, nTime=1435194136, nBits=1e0fffff, nNonce=129507, vtx=1, vchBlockSig=)
+	//Coinbase(hash=cad21153f3, nTime=1435194136, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+    	//CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d020f2741446f6e2774206c6f6f6b206174207468652066696e676572206f7220796f752077696c6c206d69737320616c6c207468652068656176656e6c7920676c6f727921)
+    	//CTxOut(empty)
+  	//vMerkleTree: cad21153f3 
+	//End Genesis Block
+        const char* pszTimestamp = "Don't look at the finger or you will miss all the heavenly glory!";
+        unsigned int nTimeGenesis=1435194136;
+        unsigned int nNonceGenesis=129507;
 
         if (fTestNet)
         {
-            pszTimestamp="April 2, 2014 Supreme Court Strikes Down Overall Campaign Contribution Limits";
-            nTimeGenesis=1396491392;
-            nNonceGenesis=1130877;
+            pszTimestamp="It's like a finger pointing to the moon";
+            nTimeGenesis=1435194136;
+            nNonceGenesis=228466;
         }
 
 
@@ -2310,9 +2311,9 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
         if (!fTestNet)
-            assert(block.hashMerkleRoot == uint256("0xf88246c72a053cc2176dbf2ac773bcf79f021bba9c2c3c8fccc0735c37d9354c"));
+            assert(block.hashMerkleRoot == uint256("0xcad21153f38f96e94271f41590ecf5a052edd851dd7869fa8b375958ea1050cc"));
         else
-            assert(block.hashMerkleRoot == uint256("0xde9e0c68d6503ae8c0c3d368b200dfc403192cdf926041565fe9de22be8ee1a4"));
+            assert(block.hashMerkleRoot == uint256("0xb598a4d932cfad63a2ee196c17ffbcac49777ab8cd1b309a26f30ef2ec9af6f2"));
 
         block.print();
         assert(block.GetHash() == hashGenesisBlock);
