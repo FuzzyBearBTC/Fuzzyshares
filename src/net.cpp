@@ -1001,8 +1001,8 @@ static const char *strDNSSeed[][2] = {
     // NOTE: Only testnet nodes are included in this build. If you are using this
     // for a real Peershares offering, you will want to remove the "t" that
     // appears before the node name and IP
-    {"tPeershares NODE_2_EU-Ireland", "t54.72.105.68"},
-    {"tPeershares NODE_3_SE-A_Singapore", "t54.255.142.16"},
+    {"Peershares NODE_1_USA", "45.55.76.211"},
+    {"tPeershares NODE_1_USA", "t45.55.76.211"},
 };
 
 void ThreadDNSAddressSeed(void* parg)
