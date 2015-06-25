@@ -1003,6 +1003,9 @@ static const char *strDNSSeed[][2] = {
     // appears before the node name and IP
     {"Peershares NODE_1_USA", "45.55.76.211"},
     {"tPeershares NODE_1_USA", "t45.55.76.211"},
+    {"Peershares NODE_2_ASD", "178.62.211.166"},
+    {"tPeershares NODE_2_ASD", "t178.62.211.166"},
+178.62.211.166
 };
 
 void ThreadDNSAddressSeed(void* parg)
